@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="header" th:fragment="header">
+    <div class="logo">
+        Data Register
+    </div>
+    <nav class="nav">
+        <div class="item">
+            <a th:href="@{/user/}">Users</a>
+        </div>
+        <div class="item">
+            <a th:href="@{/log/}">Logs</a>
+        </div>
+        <div class="item">
+            <a th:href="@{/repo/}">Repositories</a>
+        </div>
+        <div class="item">
+            <a th:href="@{/branch/}">Branches</a>
+        </div>
+        <div class="logoff">
+            <form th:action="@{/logout}" method="POST">
+                <input type="submit" value="Log off"/>
+            </form>
+        </div>
+    </nav>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Branch</title>
+    <link th:href=@{/css/common.css} type="text/css" rel="stylesheet">
+</head>
+<body>
+<div th:insert="fragments/header :: header"></div>
+<div th:if= "${message != '' && message != 'null' && messageType != 'null' && messageType != '' && message != null && messageType != 'null'}" th:class="'message-' + ${messageType}">
+    <span th:text="${messageType} + ': ' + ${message}"/>
+</div>
+<form action="#" th:action="@{/branch/save}" method="POST" th:object="${branchDto}">
+    <div class="title">
+        Branch
+    </div>
+    <div class="input">
+        <label>
+            Branch:
+        </label>
+        <input type="text" th:field="*{Id}"/>
+    </div>
+    <div class="input">
+        <label>
+            Name:
+        </label>
+        <input type="text" th:field="*{name}"/>
+    </div>
+    <div class="input">
+        <label>
+            User:
+        </label>
+        <select th:field="*{user_id}">
+            <option th:value="${user.Id}" th:text="${user.username}" th:each="user: ${users}"/>
+        </select>
+    </div>
+    <div class="input">
+        <label>
+            Project Repository:
+        </label>
+        <select th:field="*{repo_id}">
+            <option th:value="${repo.Id}" th:text="${repo.name}" th:each="repo: ${repos}"/>
+        </select>
+    </div>
+    <div class="input">
+        <label>
+            Project Repository:
+        </label>
+        <select th:field="*{status_id}">
+            <option th:value="${status.Id}" th:text="${status.name}" th:each="status: ${statuses}"/>
+        </select>
+    </div>
+    <div class="button-organizer">
+        <button>
+            Create
+        </button>
+    </div>
+</form>
+</body>
+</html>

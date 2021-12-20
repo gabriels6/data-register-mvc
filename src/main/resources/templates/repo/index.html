@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Project Repository</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href=@{/css/common.css} type="text/css" rel="stylesheet">
+</head>
+<body>
+<div th:insert="fragments/header :: header"></div>
+<div th:if= "${message != '' && message != 'null' && messageType != 'null' && messageType != '' && message != null && messageType != 'null'}" th:class="'message-' + ${messageType}">
+    <span th:text="${messageType} + ': ' + ${message}"/>
+</div>
+<div class="horizontal-align">
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Created At</th>
+            <th>Search</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+        <th:block th:each="repo: ${repos}">
+            <tr>
+                <td th:text="${repo.Id}"/>
+                <td th:text="${repo.name}"/>
+                <td th:text="${repo.description}"/>
+                <td th:text="${repo.createdAt}"/>
+                <td><a th:href="@{/repo/{id}(id=${repo.Id})}">Search</a></td>
+                <td>
+                    <a th:href="@{/repo/delete/{id}(id=${repo.Id})}" onclick="deleteField">Delete</a>
+                </td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+<div class="button-organizer">
+    <button>
+        <a th:href="@{/repo/create}">Create repository</a>
+    </button>
+</div>
+</body>
+</html>

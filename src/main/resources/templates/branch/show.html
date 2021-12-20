@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Branch</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href=@{/css/common.css} type="text/css" rel="stylesheet">
+</head>
+<body>
+<div th:insert="fragments/header :: header"></div>
+<div class="horizontal-align">
+    <div class="data-organizer">
+        <div class="title">
+            Repo Branch
+        </div>
+        <div class="field">
+            <div class="name">
+                Id
+            </div>
+            <div class="value">
+                <span th:text="${branch.Id}"/>
+            </div>
+        </div>
+        <div class="field">
+            <div class="name">
+                Username
+            </div>
+            <div class="value">
+                <span th:text="${branch.user.username}"/>
+            </div>
+        </div>
+        <div class="field">
+            <div class="name">
+                Name
+            </div>
+            <div class="value">
+                <span th:text="${branch.name}"/>
+            </div>
+        </div>
+        <div class="field">
+            <div class="name">
+                Repository
+            </div>
+            <div class="value">
+                <span th:text="${branch.repository.name}"/>
+            </div>
+        </div>
+        <div class="field">
+            <div class="name">
+                Status
+            </div>
+            <div class="value">
+                <span th:text="${branch.status.name}"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="button-organizer">
+    <button>
+        <a th:href="@{/branch/edit/{id}(id=${branch.Id})}">Edit</a>
+    </button>
+</div>
+</body>
+</html>

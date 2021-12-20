@@ -1,0 +1,228 @@
+body {
+    margin:0;
+    padding:0;
+    background-color: #EEE;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+    width:100%;
+    height:40px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.header .logo {
+    background: #111;
+    color:#EEE;
+    font-weight: bold;
+    height:100%;
+    width:20%;
+    display: flex;
+    padding-left:20px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.header .nav {
+    width:80%;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: #333;
+}
+
+.header .nav .item {
+    color:#EEE;
+    min-width: 110px;
+    height:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .nav .item:hover {
+    color: #FFF;
+    background-color:#000;
+    transition: all .5s;
+}
+
+.logoff {
+    background-color: #FF5F5F;
+    color:white;
+    min-width: 95px;
+    height:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoff form input[type="submit"] {
+    background:none;
+    border:none;
+    color:#FFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logoff:hover {
+    background-color: #d65252;
+    transition: all .5s;
+}
+
+table {
+    min-width: 500px;
+    border-collapse: collapse;
+}
+
+thead {
+
+}
+
+th {
+    background:#222;
+    color:#EEE;
+    height:28px;
+    font-weight: 500;
+    border:solid 1px #333;
+    min-width:30px;
+}
+
+td {
+    background-color: #555;
+    border: solid 1px #333;
+    color: #CCC;
+    text-align:center;
+    min-width:30px;
+}
+
+.card {
+    display:flex;
+    flex-direction: row;
+    min-width:100px;
+    max-width:500px;
+    min-height:150px;
+    background-color: #DEDEDE;
+}
+
+form {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.button-organizer {
+    display: flex;
+    padding: 5px 0px;
+    justify-content: space-between;
+    max-width: 200px;
+}
+
+
+button {
+    border:solid 1px #000;
+    background-color: #333;
+    color:#DDD;
+    border-radius: 5px;
+    min-width:80px;
+    min-height:30px;
+    margin-inline: 2.5px;
+}
+
+button:hover {
+    border: solid 1px #333;
+    background-color: #555;
+}
+
+button:active {
+    border: solid 1px #000;
+    background-color: #222;
+}
+
+.data-organizer {
+    display:flex;
+    flex-direction: column;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 30px;
+    min-height:50px;
+    display: flex;
+    align-items: center;
+    padding-left: 4px;
+}
+
+.field {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name {
+    font-weight: 500;
+    margin-right:20px;
+}
+
+.value {
+
+}
+
+.horizontal-align {
+    padding:5px 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+a {
+    text-decoration: none;
+    color:#EEE;
+}
+
+.message-error {
+    background: #f8000066;
+    border: solid 1px #ffe0e0;
+
+    min-height:50px;
+    display:flex;
+    align-items: center;
+    width:100%;
+    box-sizing: border-box;
+    padding:0 20px;
+}
+
+.message-success {
+    background: #2bff0066;
+    border: solid 1px #e7ffe0;
+    min-height:50px;
+    display:flex;
+    align-items: center;
+    width:100%;
+    box-sizing: border-box;
+    padding:0 20px;
+}
+
+.message-warning {
+    background: #fbff0066;
+    border: solid 1px #fcffe0;
+
+    min-height:50px;
+    display:flex;
+    align-items: center;
+    width:100%;
+    box-sizing: border-box;
+    padding:0 20px;
+}
+
+.middle-form {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+}

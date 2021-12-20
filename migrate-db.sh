@@ -1,0 +1,1 @@
+mvn flyway:repair flyway:migrate -Dflyway.configFiles=FlywayConfig.conf
