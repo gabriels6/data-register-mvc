@@ -87,6 +87,7 @@ th {
     font-weight: 500;
     border:solid 1px #333;
     min-width:30px;
+    min-height:24px;
 }
 
 td {
@@ -95,6 +96,8 @@ td {
     color: #CCC;
     text-align:center;
     min-width:30px;
+    min-height:24px;
+    padding:2px 10px;
 }
 
 .card {
@@ -183,6 +186,11 @@ button:active {
 a {
     text-decoration: none;
     color:#EEE;
+}
+
+.value a {
+    color:black;
+    font-weight:bold;
 }
 
 .message-error {
