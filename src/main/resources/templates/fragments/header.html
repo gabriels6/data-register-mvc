@@ -12,11 +12,16 @@
         <div class="item">
             <a th:href="@{/log/}">Logs</a>
         </div>
-        <div class="item">
-            <a th:href="@{/repo/}">Repositories</a>
-        </div>
-        <div class="item">
-            <a th:href="@{/branch/}">Branches</a>
+        <div class="item dropdown">
+            <a href="#">Branch Manager</a>
+            <div class="dropdown-content">
+                <div class="dropdown-item">
+                    <a th:href="@{/repo/}">Repositories</a>
+                </div>
+                <div class="dropdown-item">
+                    <a th:href="@{/branch/}">Branches</a>
+                </div>
+            </div>
         </div>
         <div class="logoff">
             <form th:action="@{/logout}" method="POST">
