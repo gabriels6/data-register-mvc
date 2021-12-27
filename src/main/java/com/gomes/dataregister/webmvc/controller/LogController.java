@@ -7,6 +7,7 @@ import com.gomes.dataregister.response.ErrorResponse;
 import com.gomes.dataregister.response.LogApiResponse;
 import com.gomes.dataregister.service.LogService;
 import com.gomes.dataregister.service.UserService;
+import com.gomes.dataregister.utils.MessageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +22,8 @@ public class LogController implements BasicController{
 
     @Autowired
     UserService userService;
+
+    MessageUtils messageUtils = new MessageUtils();
 
     @Override
     @GetMapping(value = {"/",""})
@@ -61,7 +64,7 @@ public class LogController implements BasicController{
         LogApiResponse response = logService.saveLog(log);
         if(response.getStatusCode() == 500) {
             model.addAttribute("message",response.getMessage());
-            model.addAttribute("messageType","error");
+            model.addAttribute("messageType",messageUtils.ERROR_MESSAGE_TYPE);
             return "log/create";
         }
         model.addAttribute("log", response.getLog());
@@ -82,7 +85,7 @@ public class LogController implements BasicController{
             return "log/edit";
         } catch (Exception ex) {
             model.addAttribute("message","Erro no servidor.");
-            model.addAttribute("messageType","error");
+            model.addAttribute("messageType",messageUtils.ERROR_MESSAGE_TYPE);
             return "log/index";
         }
     }
@@ -100,7 +103,7 @@ public class LogController implements BasicController{
             return "log/index";
         } catch (Exception ex) {
             model.addAttribute("message","Erro no servidor.");
-            model.addAttribute("messageType","error");
+            model.addAttribute("messageType",messageUtils.ERROR_MESSAGE_TYPE);
             return "log/index";
         }
     }

@@ -2,8 +2,6 @@ package com.gomes.dataregister.dataobject;
 
 import com.gomes.dataregister.utils.DateUtils;
 
-import java.time.LocalDateTime;
-
 public class LogDataObject extends GenericDataObject {
 
     private int id;
@@ -37,7 +35,6 @@ public class LogDataObject extends GenericDataObject {
     }
 
     public String getDate() {
-        LocalDateTime now = LocalDateTime.now();
         String date = this.date;
         if(date == null) {
             date = new DateUtils().getCurrentDate();

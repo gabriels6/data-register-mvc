@@ -6,6 +6,8 @@ import com.gomes.dataregister.service.BranchService;
 import com.gomes.dataregister.service.ProjectRepoService;
 import com.gomes.dataregister.service.StatusService;
 import com.gomes.dataregister.service.UserService;
+import com.gomes.dataregister.utils.MessageUtils;
+import org.aspectj.bridge.MessageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +28,8 @@ public class BranchController implements BasicController{
 
     @Autowired
     StatusService statusService;
+
+    MessageUtils messageUtils = new MessageUtils();
 
     @Override
     @GetMapping(value = {"/", ""})
@@ -70,12 +74,12 @@ public class BranchController implements BasicController{
             branchService.deleteBranch(branchService.getBranchById(Id));
             model.addAttribute("branches",branchService.getAllBranches());
             model.addAttribute("message","Sucesso ao remover branch.");
-            model.addAttribute("messageType","success");
+            model.addAttribute("messageType",messageUtils.SUCCESS_MESSAGE_TYPE);
             return "branch/index";
         } catch (Exception ex) {
             model.addAttribute("branches",branchService.getAllBranches());
             model.addAttribute("message","Erro ao remover branch. " + ex.getLocalizedMessage());
-            model.addAttribute("messageType","error");
+            model.addAttribute("messageType",messageUtils.ERROR_MESSAGE_TYPE);
             return "branch/indexs";
         }
     }
@@ -91,13 +95,13 @@ public class BranchController implements BasicController{
             branch.setStatus(statusService.getStatusById(branchDto.getStatus_id()));
             model.addAttribute("repo",branchService.saveBranch(branch));
             model.addAttribute("message","Branch criada/editada com sucesso.");
-            model.addAttribute("messageType","success");
+            model.addAttribute("messageType",messageUtils.SUCCESS_MESSAGE_TYPE);
             model.addAttribute("branch",branch);
             return "branch/show";
         } catch (Exception ex) {
             model.addAttribute("branchDto",branchDto);
             model.addAttribute("message","Erro ao criar/editar branch. " + ex.getLocalizedMessage());
-            model.addAttribute("messageType","success");
+            model.addAttribute("messageType",messageUtils.ERROR_MESSAGE_TYPE);
             return "branch/create";
         }
     }

@@ -5,6 +5,7 @@ import com.gomes.dataregister.service.DateService;
 import com.gomes.dataregister.service.LogService;
 import com.gomes.dataregister.service.ProjectRepoService;
 import com.gomes.dataregister.service.SessionService;
+import com.gomes.dataregister.utils.MessageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +27,8 @@ public class RepoController implements BasicController {
     @Autowired
     SessionService sessionService;
 
+    MessageUtils messageUtils = new MessageUtils();
+
     @Override
     @GetMapping(value = {"/", ""})
     public String index(Model model) {
@@ -40,7 +43,7 @@ public class RepoController implements BasicController {
             return "repo/show";
         } catch (Exception ex) {
             model.addAttribute("message","Erro ao buscar repositório. " + ex.getLocalizedMessage());
-            model.addAttribute("messageType","error");
+            model.addAttribute("messageType",messageUtils.ERROR_MESSAGE_TYPE);
             model.addAttribute("repos",repoService.getAllRepos());
             return "repo/index";
         }
@@ -66,12 +69,12 @@ public class RepoController implements BasicController {
         try {
             repoService.deleteRepo(repoService.getRepoById(Id));
             model.addAttribute("message","Repositório de projeto deletado com sucesso.");
-            model.addAttribute("messageType","success");
+            model.addAttribute("messageType",messageUtils.SUCCESS_MESSAGE_TYPE);
             model.addAttribute("repos",repoService.getAllRepos());
             return "repo/index";
         } catch (Exception ex) {
             model.addAttribute("message","Erro ao deletar repositório de projeto." + ex.getLocalizedMessage());
-            model.addAttribute("messageType","error");
+            model.addAttribute("messageType",messageUtils.ERROR_MESSAGE_TYPE);
             repoService.deleteRepo(repoService.getRepoById(Id));
             model.addAttribute("repos",repoService.getAllRepos());
             return "repo/index";
@@ -83,12 +86,12 @@ public class RepoController implements BasicController {
         try {
             ProjectRepo currRepo = repoService.saveRepo(repo);
             model.addAttribute("message","Repositório de projeto cadastrado com sucesso.");
-            model.addAttribute("messageType","success");
+            model.addAttribute("messageType",messageUtils.SUCCESS_MESSAGE_TYPE);
             model.addAttribute("repo", currRepo);
             return "repo/show";
         } catch (Exception ex) {
             model.addAttribute("message","Erro ao cadastrar/editar repositório de projeto." + ex.getLocalizedMessage());
-            model.addAttribute("messageType","error");
+            model.addAttribute("messageType",messageUtils.ERROR_MESSAGE_TYPE);
             return "repo/create";
         }
 
