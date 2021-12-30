@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href=@{/css/common.css} type="text/css" rel="stylesheet">
+</head>
+<body>
+<div th:insert="core/fragments/header :: header"></div>
+<div class="horizontal-align">
+    <div class="data-organizer">
+        <div class="title">
+            Log
+        </div>
+        <div class="field">
+            <div class="name">
+                <span th:text="'Id'"/>
+            </div>
+            <div class="value">
+                <span th:text="${log.Id}"/>
+            </div>
+        </div>
+        <div class="field">
+            <div class="name">
+                <span th:text="'Description'"/>
+            </div>
+            <div class="value">
+                <span th:text="${log.description}"/>
+            </div>
+        </div>
+        <div class="field">
+            <div class="name">
+                <span th:text="'Date'"/>
+            </div>
+            <div class="value">
+                <span th:text="${log.date}"/>
+            </div>
+        </div>
+        <div class="field">
+            <div class="name">
+                <span th:text="'User'"/>
+            </div>
+            <div class="value">
+                <span th:text="${log.user.username}"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="button-organizer">
+    <button>
+        <a th:href="@{/log/edit/{id}(id=${log.Id})}">Edit</a>
+    </button>
+</div>
+</body>
+</html>
