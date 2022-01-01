@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>Create log</title>
     <link th:href=@{/css/common.css} type="text/css" rel="stylesheet">
+    <link th:href=@{/css/admin/common.css} type="text/css" rel="stylesheet">
 </head>
 <body>
-<div th:insert="core/fragments/header :: header"></div>
+<div th:insert="admin/fragments/header :: header"></div>
 <div th:if= "${message != '' && message != 'null' && messageType != 'null' && messageType != '' && message != null && messageType != 'null'}" th:class="'message-' + ${messageType}">
     <span th:text="${messageType} + ': ' + ${message}"/>
 </div>
-<form action="#" th:action="@{/log/save}" method="POST" th:object="${logDto}">
+<form action="#" th:action="@{/admin/log/save}" method="POST" th:object="${logDto}">
     <div class="title">
         Log
     </div>

@@ -4,9 +4,10 @@
     <title>User</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link th:href=@{/css/common.css} type="text/css" rel="stylesheet">
+    <link th:href=@{/css/admin/common.css} type="text/css" rel="stylesheet">
 </head>
 <body>
-    <div th:insert="core/fragments/header :: header"></div>
+    <div th:insert="admin/fragments/header :: header"></div>
     <div th:if= "${message != '' && message != 'null' && messageType != 'null' && messageType != '' && message != null && messageType != 'null'}" th:class="'message-' + ${messageType}">
         <span th:text="${messageType} + ': ' + ${message}"/>
     </div>
@@ -25,9 +26,9 @@
                     <td th:text="${user.Id}"/>
                     <td th:text="${user.username}"/>
                     <td>****</td>
-                    <td><a th:href="@{/user/{id}(id=${user.Id})}">Search</a></td>
+                    <td><a th:href="@{/admin/user/{id}(id=${user.Id})}">Search</a></td>
                     <td>
-                        <a th:if = "${sessionUser.getId() != user.getId()}" th:href="@{/user/delete/{id}(id=${user.Id})}" onclick="deleteField">Delete</a>
+                        <a th:if = "${sessionUser.getId() != user.getId()}" th:href="@{/admin/user/delete/{id}(id=${user.Id})}" onclick="deleteField">Delete</a>
                     </td>
                 </tr>
             </th:block>
@@ -36,7 +37,7 @@
     </div>
     <div class="button-organizer">
         <button>
-            <a th:href="@{/user/create}">Create user</a>
+            <a th:href="@{/admin/user/create}">Create user</a>
         </button>
     </div>
     <script th:src="@{/js/user/index.js}" rel="script"/>

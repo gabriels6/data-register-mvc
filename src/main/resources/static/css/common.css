@@ -116,8 +116,24 @@ form {
 }
 
 .input {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin:5px 5px;
+    display:flex;
+    flex-direction: column;
+}
+
+.input label {
+    margin:6px 0px;
+}
+
+.input input {
+    max-width: 300px;
+    min-height:25px;
+    border: solid 1px #CCC;
+    box-shadow: 0em 0.2em 0.4em #DDD;
+}
+
+.input input::placeholder {
+    color:#999;
 }
 
 .button-organizer {

@@ -4,10 +4,11 @@
     <title>User</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link th:href=@{/css/common.css} type="text/css" rel="stylesheet">
+    <link th:href=@{/css/admin/common.css} type="text/css" rel="stylesheet">
 </head>
 <body>
-    <div th:insert="core/fragments/header :: header"></div>
-    <form action="#" th:action="@{/user/save}" method="POST" th:object="${user}">
+    <div th:insert="admin/fragments/header :: header"></div>
+    <form action="#" th:action="@{/admin/user/save}" method="POST" th:object="${user}">
         <div class="title">
             User
         </div>

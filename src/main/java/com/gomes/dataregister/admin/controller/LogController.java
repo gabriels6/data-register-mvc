@@ -15,7 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/log")
+@RequestMapping("/admin/log")
 public class LogController implements BasicController {
 
     @Autowired
