@@ -1,6 +1,6 @@
 package com.gomes.dataregister.core.controller;
 
-import com.gomes.dataregister.admin.service.SessionService;
+import com.gomes.dataregister.core.service.SessionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

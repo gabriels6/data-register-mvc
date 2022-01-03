@@ -1,4 +1,4 @@
-package com.gomes.dataregister.admin.service;
+package com.gomes.dataregister.core.service;
 
 import com.gomes.dataregister.admin.model.AuthUserDetails;
 import org.springframework.security.core.context.SecurityContextHolder;

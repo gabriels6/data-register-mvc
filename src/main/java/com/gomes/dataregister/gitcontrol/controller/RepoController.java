@@ -4,7 +4,7 @@ import com.gomes.dataregister.gitcontrol.model.ProjectRepo;
 import com.gomes.dataregister.admin.service.DateService;
 import com.gomes.dataregister.admin.service.LogService;
 import com.gomes.dataregister.gitcontrol.service.ProjectRepoService;
-import com.gomes.dataregister.admin.service.SessionService;
+import com.gomes.dataregister.core.service.SessionService;
 import com.gomes.dataregister.core.utils.MessageUtils;
 import com.gomes.dataregister.core.controller.BasicController;
 import org.springframework.beans.factory.annotation.Autowired;

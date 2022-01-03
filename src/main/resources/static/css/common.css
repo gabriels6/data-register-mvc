@@ -72,7 +72,7 @@ body {
 }
 
 table {
-    min-width: 500px;
+    width: 100%;
     border-collapse: collapse;
 }
 
@@ -125,7 +125,7 @@ form {
     margin:6px 0px;
 }
 
-.input input {
+.input input,select {
     max-width: 300px;
     min-height:25px;
     border: solid 1px #CCC;
