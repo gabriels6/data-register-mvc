@@ -47,12 +47,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+
+        String[] authenticatedUrls = {
+                "/admin/user/**",
+                "/admin/log/**",
+                "/",
+                "/repo/**",
+                "/branch/**",
+                "/spa/**",
+        };
+
+        int cont = 0;
+        while(cont < authenticatedUrls.length) {
+            http.authorizeRequests().antMatchers(authenticatedUrls[cont]).authenticated();
+            cont++;
+        }
+
         http.authorizeRequests()
-                .antMatchers("/admin/user/**").authenticated()
-                .antMatchers("/admin/log/**").authenticated()
-                .antMatchers("/").authenticated()
-                .antMatchers("/repo/**").authenticated()
-                .antMatchers("/branch/**").authenticated()
                 .antMatchers("/auth").permitAll()
                 .anyRequest().permitAll()
                 .and()
