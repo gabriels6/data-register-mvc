@@ -1,11 +1,11 @@
 package com.gomes.dataregister.admin.controller;
 
 import com.gomes.dataregister.core.dataobject.LogDataObject;
-import com.gomes.dataregister.admin.model.User;
+import com.gomes.dataregister.core.model.User;
 import com.gomes.dataregister.core.response.ErrorResponse;
 import com.gomes.dataregister.admin.service.LogService;
 import com.gomes.dataregister.core.service.SessionService;
-import com.gomes.dataregister.admin.service.UserService;
+import com.gomes.dataregister.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

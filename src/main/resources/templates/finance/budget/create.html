@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Budget</title>
+    <link th:href=@{/css/common.css} type="text/css" rel="stylesheet">
+</head>
+<body>
+<div th:insert="core/fragments/header :: header"></div>
+<div th:if= "${message != '' && message != 'null' && messageType != 'null' && messageType != '' && message != null && messageType != 'null'}" th:class="'message-' + ${messageType}">
+    <span th:text="${messageType} + ': ' + ${message}"/>
+</div>
+<form action="#" th:action="@{/finance/budget/save}" method="POST" th:object="${budget}">
+    <div class="title">
+        Budget
+    </div>
+    <div class="input">
+        <label>
+            Limit:
+        </label>
+        <input type="number" step=".01" th:field="*{limit}"/>
+    </div>
+    <div class="input">
+        <label>
+            User:
+        </label>
+        <select th:field="*{user.Id}">
+            <option th:value="${user.Id}" th:text="${user.username}" th:each="user: ${users}"/>
+        </select>
+    </div>
+    <div class="input">
+        <label>
+            Accounting Type:
+        </label>
+        <select th:field="*{accountingType.Id}">
+            <option th:value="${type.Id}" th:text="${type.name}" th:each="type: ${accountingTypes}"/>
+        </select>
+    </div>
+    <div class="input">
+        <label>
+            Period:
+        </label>
+        <select th:field="*{period.Id}">
+            <option th:value="${period.Id}" th:text="${period.getMonthSymbol()} + '/' + ${period.year}" th:each="period: ${periods}"/>
+        </select>
+    </div>
+    <div class="button-organizer">
+        <button>
+            Create
+        </button>
+    </div>
+</form>
+</body>
+</html>

@@ -1,4 +1,4 @@
-package com.gomes.dataregister.admin.model;
+package com.gomes.dataregister.core.model;
 
 
 import javax.persistence.*;
@@ -10,7 +10,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
-    private int Id;
+    private int id;
 
     @Column(name = "username", nullable = false)
     private String username;
@@ -19,11 +19,11 @@ public class User {
     private String password;
 
     public int getId() {
-        return this.Id;
+        return this.id;
     }
 
     public void setId(int id) {
-        this.Id = id;
+        this.id = id;
     }
 
     public String getUsername() {

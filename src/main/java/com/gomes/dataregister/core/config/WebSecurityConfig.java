@@ -55,6 +55,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/repo/**",
                 "/branch/**",
                 "/spa/**",
+                "/finance/**"
         };
 
         int cont = 0;

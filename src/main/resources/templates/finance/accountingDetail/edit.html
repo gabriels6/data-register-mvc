@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Budget</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href=@{/css/common.css} type="text/css" rel="stylesheet">
+    <link th:href=@{/css/admin/common.css} type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div th:insert="core/fragments/header :: header"></div>
+    <form action="#" th:action="@{/finance/accounting/detail/save}" method="POST" th:object="${accountingDetail}">
+        <div class="title">
+            Accounting Detail
+        </div>
+        <div class="input">
+            <label>
+                Id:
+            </label>
+            <input type="text" th:field="*{Id}"/>
+        </div>
+        <div class="input">
+            <label>
+                Name:
+            </label>
+            <input type="text" th:field="*{name}"/>
+        </div>
+        <div class="input">
+            <label>
+                Value:
+            </label>
+            <input type="number" step=".01" th:field="*{value}"/>
+        </div>
+        <div class="input">
+            <label>
+                Accounting:
+            </label>
+            <select th:field="*{accounting.Id}">
+                <option th:value="${accounting.Id}" th:text="${accounting.accountingType.name} + ' - ' + ${accounting.description}" th:each="accounting: ${accountings}"/>
+            </select>
+        </div>
+        <div class="button-organizer">
+            <button>
+                Edit
+            </button>
+        </div>
+    </form>
+</body>
+</html>

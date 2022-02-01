@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <title>Header</title>
 <body>
 <div class="header" th:fragment="header">
     <div class="logo">
@@ -17,6 +18,26 @@
                 </div>
                 <div class="dropdown-item">
                     <a th:href="@{/branch/}">Branches</a>
+                </div>
+            </div>
+        </div>
+        <div class="item dropdown">
+            <a href="#">Finance</a>
+            <div class="dropdown-content">
+                <div class="dropdown-item">
+                    <a th:href="@{/finance/accounting/}">Accounting</a>
+                </div>
+                <div class="dropdown-item">
+                    <a th:href="@{/finance/budget/}">Budget</a>
+                </div>
+                <div class="dropdown-item">
+                    <a th:href="@{/finance/period/}">Period</a>
+                </div>
+                <div class="dropdown-item">
+                    <a th:href="@{/finance/accounting/detail/}">Acc. Details</a>
+                </div>
+                <div class="dropdown-item">
+                    <a th:href="@{/finance/accounting/type/}">Acc. Types</a>
                 </div>
             </div>
         </div>

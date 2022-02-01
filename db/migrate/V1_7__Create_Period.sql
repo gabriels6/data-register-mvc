@@ -1,0 +1,5 @@
+CREATE TABLE "periods" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "month" INTEGER NOT NULL,
+    "year" INTEGER NOT NULL
+);

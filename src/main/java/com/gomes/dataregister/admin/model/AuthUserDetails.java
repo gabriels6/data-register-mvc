@@ -1,5 +1,6 @@
 package com.gomes.dataregister.admin.model;
 
+import com.gomes.dataregister.core.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

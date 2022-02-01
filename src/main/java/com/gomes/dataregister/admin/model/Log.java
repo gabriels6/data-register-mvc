@@ -1,5 +1,7 @@
 package com.gomes.dataregister.admin.model;
 
+import com.gomes.dataregister.core.model.User;
+
 import javax.persistence.*;
 
 @Entity

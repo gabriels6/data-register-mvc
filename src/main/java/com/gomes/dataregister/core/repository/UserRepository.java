@@ -1,6 +1,6 @@
-package com.gomes.dataregister.admin.repository;
+package com.gomes.dataregister.core.repository;
 
-import com.gomes.dataregister.admin.model.User;
+import com.gomes.dataregister.core.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

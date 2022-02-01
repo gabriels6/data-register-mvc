@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href=@{/css/common.css} type="text/css" rel="stylesheet">
+    <link th:href=@{/css/admin/common.css} type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div th:insert="core/fragments/header :: header"></div>
+    <form action="#" th:action="@{/finance/period/save}" method="POST" th:object="${period}">
+        <div class="title">
+            Period
+        </div>
+        <div class="input">
+            <label>
+                Id:
+            </label>
+            <input type="text" th:field="*{Id}"/>
+        </div>
+        <div class="input">
+            <label>
+                Month:
+            </label>
+            <select th:field="*{month}">
+                <option th:value="${month}" th:text="${month}" th:each="month: ${months}"/>
+            </select>
+        </div>
+        <div class="input">
+            <label>
+                Year:
+            </label>
+            <input type="number" th:field="*{year}"/>
+        </div>
+        <div class="button-organizer">
+            <button>
+                Edit
+            </button>
+        </div>
+    </form>
+</body>
+</html>

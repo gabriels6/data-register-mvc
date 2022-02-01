@@ -1,6 +1,6 @@
 package com.gomes.dataregister.gitcontrol.model;
 
-import com.gomes.dataregister.admin.model.User;
+import com.gomes.dataregister.core.model.User;
 
 import javax.persistence.*;
 import java.io.Serializable;

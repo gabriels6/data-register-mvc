@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Accounting Type</title>
+    <link th:href=@{/css/common.css} type="text/css" rel="stylesheet">
+</head>
+<body>
+<div th:insert="core/fragments/header :: header"></div>
+<div th:if= "${message != '' && message != 'null' && messageType != 'null' && messageType != '' && message != null && messageType != 'null'}" th:class="'message-' + ${messageType}">
+    <span th:text="${messageType} + ': ' + ${message}"/>
+</div>
+<form action="#" th:action="@{/finance/accounting/type/save}" method="POST" th:object="${accType}">
+    <div class="title">
+        Accounting Type
+    </div>
+    <div class="input">
+        <label>
+            Name:
+        </label>
+        <input type="text" th:field="*{name}"/>
+    </div>
+    <div class="input">
+        <label>
+            Description:
+        </label>
+        <input type="text" th:field="*{description}"/>
+    </div>
+    <div class="button-organizer">
+        <button>
+            Create
+        </button>
+    </div>
+</form>
+</body>
+</html>

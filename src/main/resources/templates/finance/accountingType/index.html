@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Accounting Type</title>
+    <link th:href=@{/css/common.css} type="text/css" rel="stylesheet">
+</head>
+<body>
+<div th:insert="core/fragments/header :: header"></div>
+<div th:if= "${message != '' && message != 'null' && messageType != 'null' && messageType != '' && message != null && messageType != 'null'}" th:class="'message-' + ${messageType}">
+    <span th:text="${messageType} + ': ' + ${message}"/>
+</div>
+<div class="horizontal-align">
+    <table>
+        <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Desc</th>
+        <th>Search</th>
+        <th>Delete</th>
+        </thead>
+        <tbody>
+        <th:block th:each="type: ${accTypes}">
+            <tr>
+                <td th:text="${type.Id}"/>
+                <td th:text="${type.name}"/>
+                <td th:text="${type.description}"/>
+                <td><a th:href="@{/finance/accounting/type/{id}(id=${type.Id})}">Search</a></td>
+                <td>
+                    <a th:href="@{/finance/accounting/type/delete/{id}(id=${type.Id})}">Delete</a>
+                </td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+<div class="horizontal-align">
+    <div class="button-organizer">
+        <button>
+            <a th:href="@{/finance/accounting/type/create}">Create Accounting Type</a>
+        </button>
+    </div>
+</div>
+</body>
+</html>

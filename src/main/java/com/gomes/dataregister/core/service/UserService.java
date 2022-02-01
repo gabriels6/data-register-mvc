@@ -1,7 +1,7 @@
-package com.gomes.dataregister.admin.service;
+package com.gomes.dataregister.core.service;
 
-import com.gomes.dataregister.admin.model.User;
-import com.gomes.dataregister.admin.repository.UserRepository;
+import com.gomes.dataregister.core.model.User;
+import com.gomes.dataregister.core.repository.UserRepository;
 import com.gomes.dataregister.core.service.SessionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;

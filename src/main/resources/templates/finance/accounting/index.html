@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Accounting</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href=@{/css/common.css} type="text/css" rel="stylesheet">
+</head>
+<body>
+<div th:insert="core/fragments/header :: header"></div>
+<div th:if= "${message != '' && message != 'null' && messageType != 'null' && messageType != '' && message != null && messageType != 'null'}" th:class="'message-' + ${messageType}">
+    <span th:text="${messageType} + ': ' + ${message}"/>
+</div>
+<div class="horizontal-align">
+    <table>
+        <thead>
+        <th>Id</th>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Period</th>
+        <th>Search</th>
+        <th>Delete</th>
+        </thead>
+        <tbody>
+        <th:block th:each="accounting: ${accountings}">
+            <tr>
+                <td th:text="${accounting.Id}"/>
+                <td th:text="${accounting.date}"/>
+                <td th:text="${accounting.description}"/>
+                <td th:text="${accounting.accountingType.name}"/>
+                <td th:text="${accounting.period.month} + '/' + ${accounting.period.year}"/>
+                <td><a th:href="@{/finance/accounting/{id}(id=${accounting.Id})}">Search</a></td>
+                <td>
+                    <a th:href="@{/finance/accounting/delete/{id}(id=${accounting.Id})}">Delete</a>
+                </td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+<div class="horizontal-align">
+    <div class="button-organizer">
+        <button>
+            <a th:href="@{/finance/accounting/create}">Create Accounting</a>
+        </button>
+    </div>
+</div>
+<script th:src="@{/js/user/index.js}" rel="script"/>
+</body>
+</html>

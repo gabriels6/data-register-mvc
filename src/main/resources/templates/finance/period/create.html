@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Period</title>
+    <link th:href=@{/css/common.css} type="text/css" rel="stylesheet">
+</head>
+<body>
+<div th:insert="core/fragments/header :: header"></div>
+<div th:if= "${message != '' && message != 'null' && messageType != 'null' && messageType != '' && message != null && messageType != 'null'}" th:class="'message-' + ${messageType}">
+    <span th:text="${messageType} + ': ' + ${message}"/>
+</div>
+<form action="#" th:action="@{/finance/period/save}" method="POST" th:object="${period}">
+    <div class="title">
+        Period
+    </div>
+    <div class="input">
+        <label>
+            Month:
+        </label>
+        <select th:field="*{month}">
+            <option th:value="${month}" th:text="${month}" th:each="month: ${months}"/>
+        </select>
+    </div>
+    <div class="input">
+        <label>
+            Year:
+        </label>
+        <input type="number" th:field="*{year}"/>
+    </div>
+    <div class="button-organizer">
+        <button>
+            Create
+        </button>
+    </div>
+</form>
+</body>
+</html>

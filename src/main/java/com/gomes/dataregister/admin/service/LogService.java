@@ -1,9 +1,10 @@
 package com.gomes.dataregister.admin.service;
 
 import com.gomes.dataregister.admin.model.Log;
-import com.gomes.dataregister.admin.model.User;
+import com.gomes.dataregister.core.model.User;
 import com.gomes.dataregister.admin.repository.LogRepository;
 import com.gomes.dataregister.core.response.LogApiResponse;
+import com.gomes.dataregister.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;

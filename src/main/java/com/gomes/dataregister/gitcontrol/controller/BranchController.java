@@ -5,7 +5,7 @@ import com.gomes.dataregister.gitcontrol.model.Branch;
 import com.gomes.dataregister.gitcontrol.service.BranchService;
 import com.gomes.dataregister.gitcontrol.service.ProjectRepoService;
 import com.gomes.dataregister.gitcontrol.service.StatusService;
-import com.gomes.dataregister.admin.service.UserService;
+import com.gomes.dataregister.core.service.UserService;
 import com.gomes.dataregister.core.utils.MessageUtils;
 import com.gomes.dataregister.core.controller.BasicController;
 import org.springframework.beans.factory.annotation.Autowired;

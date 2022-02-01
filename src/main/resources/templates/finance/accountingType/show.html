@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Accounting</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href=@{/css/common.css} type="text/css" rel="stylesheet">
+    <link th:href=@{/css/admin/common.css} type="text/css" rel="stylesheet">
+</head>
+<body>
+<div th:insert="core/fragments/header :: header"></div>
+<div class="horizontal-align">
+    <div class="data-organizer">
+        <div class="title">
+            Accounting Type
+        </div>
+        <div class="field">
+            <div class="name">
+                <span th:text="name"/>
+            </div>
+            <div class="value">
+                <span th:text="${accType.name}"/>
+            </div>
+        </div>
+        <div class="field">
+            <div class="name">
+                <span th:text="description"/>
+            </div>
+            <div class="value">
+                <span th:text="${accType.description}"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="button-organizer">
+    <button>
+        <a th:href="@{/finance/accounting/type/edit/{id}(id=${accType.Id})}">Edit</a>
+    </button>
+</div>
+</body>
+</html>

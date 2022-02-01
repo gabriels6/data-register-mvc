@@ -1,8 +1,8 @@
 package com.gomes.dataregister.admin.service;
 
 import com.gomes.dataregister.admin.model.AuthUserDetails;
-import com.gomes.dataregister.admin.model.User;
-import com.gomes.dataregister.admin.repository.UserRepository;
+import com.gomes.dataregister.core.model.User;
+import com.gomes.dataregister.core.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
